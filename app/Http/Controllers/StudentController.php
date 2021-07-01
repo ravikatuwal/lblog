@@ -64,4 +64,3 @@ class StudentController extends Controller
         return redirect(route('home'))->with('successMsg','Student Record Deleted Successfully');
     }
 }
-
