@@ -14,6 +14,14 @@
   <link href="{{asset('test/css/mdb.min.css') }}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="{{asset('test/css/style.css') }}" rel="stylesheet">
+      <style>
+          #footer {
+              position: fixed;
+              bottom: 0;
+              width: 100%;
+          }
+      </style>
+      
 </head>
 
 <body>
@@ -30,6 +38,8 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
+
+
   <script type="text/javascript" src="{{ asset('test/js/jquery-3.4.1.min.js')}}"></script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="{{ asset('test/js/popper.min.js')}}"></script>
@@ -37,6 +47,7 @@
   <script type="text/javascript" src="{{ asset('test/js/bootstrap.min.js')}}"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="{{ asset('test/js/mdb.min.js')}}"></script>
+  
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+<nav class="navbar navbar-expand-lg navbar-dark primary-color"  style="margin-bottom: 50px;">
 
   <!-- Navbar brand -->
   <a class="navbar-brand" href="#">Easy Learning</a>
@@ -14,6 +14,11 @@
   <div class="collapse navbar-collapse" id="basicExampleNav">
 
     <!-- Links -->
+    @guest
+    <ul class="navbar-nav mr-auto">
+         
+    </ul>
+    @else
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="{{ url('/')}}">Home
@@ -23,9 +28,8 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/create')}}">Add New</a>
       </li>
-      
-
     </ul>
+    @endguest
     <!-- Links -->
 
     
@@ -79,4 +83,5 @@
                     </ul>
                 </div>
 </nav>
+
 <!--/.Navbar-->

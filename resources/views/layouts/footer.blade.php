@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small blue pt-4">
+<footer id="footer" class="page-footer font-small blue pt-4 position: absolute;">
 
   <!-- Footer Links -->
   <div class="container-fluid text-center text-md-left">
@@ -29,3 +29,4 @@
 
 </footer>
 <!-- Footer -->
+
