@@ -20,7 +20,7 @@ Route::delete('/delete/{id}', 'StudentController@delete')->name('delete');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/change-password', 'Auth\ChangePasswordController@index')->name('password.change');
 Route::post('/change-password', 'Auth\ChangePasswordController@changepassword')->name('password.update');
