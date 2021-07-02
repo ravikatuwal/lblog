@@ -27,4 +27,4 @@ Route::post('/change-password', 'Auth\ChangePasswordController@changepassword')-
 
 Route::get('/addstudent', 'AddStudentController@addnew')->name('add.new');
 Route::post('/addstudent', 'AddStudentController@storenew')->name('store.new');
-Route::get('/studentdisplay', 'AddStudentController@index')->name('studentdisplay');
+Route::get('/home', 'HomeController@index')->name('home');

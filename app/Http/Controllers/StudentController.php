@@ -10,8 +10,8 @@ class StudentController extends Controller
 {
     public function index() {
 
-        $students = Student::paginate(5);
-        $add_students = AddStudent::paginate(5);
+        $students = Student::paginate(5,['*'],'students');
+        $add_students = AddStudent::paginate(6,['*'],'add_students');
         return view('welcome',compact('students','add_students'));
 
     }
@@ -34,7 +34,7 @@ class StudentController extends Controller
         $student->email=$request->email;
         $student->phone=$request->phone;
         $student->save();
-        return redirect(route('home'))->with('successMsg','Student Record Successfully Recorded');
+        return redirect(route('store'))->with('successMsg','Student Record Successfully Recorded');
 
     }
 

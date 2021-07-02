@@ -11,8 +11,22 @@
 
 
 <div class="container">
-<h1> Add User Page </h1>
 
+<div class="form-row mb-4">
+            <div class="col">
+            <h1> Add User Page </h1>
+            </div>
+            <div class="col">
+                @if (session('successMsg'))
+
+                <div class="alert alert-success" role="alert">
+                {{session('successMsg')}}
+                </div>
+
+                @endif
+
+            </div>
+    </div>
 
 @guest
   

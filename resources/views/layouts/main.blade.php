@@ -14,13 +14,6 @@
   <link href="{{asset('test/css/mdb.min.css') }}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="{{asset('test/css/style.css') }}" rel="stylesheet">
-      <style>
-          #footer {
-              position: fixed;
-              bottom: 0;
-              width: 100%;
-          }
-      </style>
       
 </head>
 

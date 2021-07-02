@@ -1,5 +1,5 @@
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark primary-color"  style="margin-bottom: 50px;">
+<nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top"  style="margin-bottom: 50px;">
 
   <!-- Navbar brand -->
   <a class="navbar-brand" href="#">Easy Learning</a>
@@ -86,5 +86,6 @@
                     </ul>
                 </div>
 </nav>
+
 
 <!--/.Navbar-->
