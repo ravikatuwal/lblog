@@ -26,7 +26,10 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('/create')}}">Add New</a>
+        <a class="nav-link" href="{{ url('/create')}}">Add User</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('/addstudent')}}">Add Student</a>
       </li>
     </ul>
     @endguest

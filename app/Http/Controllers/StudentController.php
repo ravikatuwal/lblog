@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\AddStudent;
 
 class StudentController extends Controller
 {
     public function index() {
 
         $students = Student::paginate(5);
-        return view('welcome',compact('students'));
+        $add_students = AddStudent::paginate(5);
+        return view('welcome',compact('students','add_students'));
 
     }
 

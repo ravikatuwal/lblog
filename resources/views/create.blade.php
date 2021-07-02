@@ -11,7 +11,7 @@
 
 
 <div class="container">
-<h1> Create Page </h1>
+<h1> Add User Page </h1>
 
 
 @guest
@@ -25,7 +25,7 @@
 
 {{ csrf_field() }}
 
-    <p class="h4 mb-4">Add Student</p>
+    <p class="h4 mb-4">Add User</p>
 
     <div class="form-row mb-4">
         <div class="col">
