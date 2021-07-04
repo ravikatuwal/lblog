@@ -4,20 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\AddStudent;
+use App\Classes;
+use App\Sections;
 use Illuminate\Support\Facades\DB;
 
 class AddStudentController extends Controller
 {
 
-    public function index() {
-
-        $add_students = AddStudent::paginate(5);
-        return view('welcome',compact('add_students'));
-
-    }
+    //not needed/ not called
 
     public function addnew() {
-        return view('addstudent');
+
+
+        $classes = Classes::paginate(5,['*'],'classes');
+        $sections = Sections::paginate(5,['*'],'sections');
+        return view('addstudent',compact('classes','sections'));
+
     }
 
     public function storenew(Request $request) {
@@ -39,7 +41,7 @@ class AddStudentController extends Controller
         $student->phone=$request->phone;
         $student->save();
         $add_students = DB::table('add_students')->get();
-        return redirect(route('store.new',['add_students' => $add_students]))->with('successMsg','Student Record Successfully Recorded');
+        return redirect('/')->with('successMsg','Student Record Successfully Recorded');
         
         
     }

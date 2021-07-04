@@ -25,12 +25,23 @@
           <span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" onclick=Activestatus();>
         <a class="nav-link" href="{{ url('/create')}}">Add User</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('/addstudent')}}">Add Student</a>
+
+
+<!-- Dropdown -->
+<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Student</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{{ url('/addclass')}}">Add Class</a>
+          <a class="dropdown-item" href="{{ url('/addsection')}}">Add Section</a>
+          <a class="dropdown-item" href="{{ url('/addstudent')}}">Add Student</a>
+        </div>
       </li>
+
+
     </ul>
     @endguest
     <!-- Links -->

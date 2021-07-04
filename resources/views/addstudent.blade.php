@@ -53,29 +53,25 @@
         <div class="col">
         <select class="browser-default custom-select" name="class">
             <option value="" selected>Choose Class</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            <option value="4">Four</option>
-            <option value="5">Five</option>
-            <option value="6">Six</option>
-            <option value="7">Seven</option>
-            <option value="8">Eight</option>
-            <option value="9">Nine</option>
-            <option value="10">Ten</option>
+
+            
+            @foreach ($classes as $class)
+            <option value="{{ $class->class_id }}">{{ $class->class_name }}</option>
+            @endforeach
         </select>
         </div>
         <div class="col">
             <!-- Section -->
             <select class="browser-default custom-select" name="section">
                 <option value="" selected>Choose Section</option>
-                <option value="1">Belee</option>
-                <option value="2">Chameli</option>
-                <option value="3">Godawari</option>
-                <option value="4">Makhamali</option>
-                <option value="2">Parijat</option>
-                <option value="3">Sayapatri</option>
-                <option value="4">Sunakhari</option>
+
+
+
+                
+                @foreach ( $sections as $section  )
+            <option value="{{ $section->class_id }}">{{ $section->section_name }}</option>
+            @endforeach
+          
             </select>
         </div>
     </div>

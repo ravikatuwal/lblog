@@ -14,6 +14,7 @@
   <link href="{{asset('test/css/mdb.min.css') }}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="{{asset('test/css/style.css') }}" rel="stylesheet">
+  
       
 </head>
 
@@ -40,7 +41,13 @@
   <script type="text/javascript" src="{{ asset('test/js/bootstrap.min.js')}}"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="{{ asset('test/js/mdb.min.js')}}"></script>
+
+  <!-- Costumized JavaScript -->
+  <script type="text/javascript" src="{{ asset('test/js/script.js')}}"></script>
+
   
+</script>
+
 </body>
 
 </html>

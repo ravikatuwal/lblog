@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Student;
 use App\AddStudent;
+use App\Classes;
+use App\Sections;
 
 class StudentController extends Controller
 {
@@ -12,7 +14,11 @@ class StudentController extends Controller
 
         $students = Student::paginate(5,['*'],'students');
         $add_students = AddStudent::paginate(6,['*'],'add_students');
-        return view('welcome',compact('students','add_students'));
+
+        $classes = Classes::all();
+
+
+        return view('welcome',compact('students','add_students','classes'));
 
     }
 
@@ -34,7 +40,7 @@ class StudentController extends Controller
         $student->email=$request->email;
         $student->phone=$request->phone;
         $student->save();
-        return redirect(route('store'))->with('successMsg','Student Record Successfully Recorded');
+        return redirect('/')->with('successMsg','Student Record Successfully Recorded');
 
     }
 
