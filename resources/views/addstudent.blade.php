@@ -64,12 +64,9 @@
             <!-- Section -->
             <select class="browser-default custom-select" name="section">
                 <option value="" selected>Choose Section</option>
-
-
-
                 
                 @foreach ( $sections as $section  )
-            <option value="{{ $section->class_id }}">{{ $section->section_name }}</option>
+            <option value="{{ $section->section_id }}">{{ $section->section_name }}</option>
             @endforeach
           
             </select>

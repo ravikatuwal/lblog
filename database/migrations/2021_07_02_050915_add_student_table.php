@@ -17,8 +17,8 @@ class AddStudentTable extends Migration
             $table->bigIncrements('id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('class');
-            $table->string('section');
+            $table->foreign('student_class')->references('class_id')->on('classes');
+            $table->foreign('student_section')->references('section_id')->on('sections');
             $table->string('email');
             $table->string('phone');
             $table->timestamps();
@@ -32,6 +32,6 @@ class AddStudentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('students_details');
+        Schema::dropIfExists('add_students');
     }
 }
