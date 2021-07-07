@@ -87,8 +87,8 @@
                   <th scope="row">{{ $student->id }}</th>
                   <td>{{ $student->first_name }}</td>
                   <td>{{ $student->last_name }}</td>
-                  <td>{{ $student->class }}</td>
-                  <td>{{ $student->section }}</td>
+                  <td>{{ $student->student_class }}</td>
+                  <td>{{ $student->student_section }}</td>
                   <td>{{ $student->email }}</td>
                   <td>{{ $student->phone }}</td>
                   <td><a class="btn btn-raised btn-primary btn-sm" href="{{ route('edit', $student->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> || 

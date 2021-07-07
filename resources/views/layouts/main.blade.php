@@ -14,7 +14,9 @@
   <link href="{{asset('test/css/mdb.min.css') }}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="{{asset('test/css/style.css') }}" rel="stylesheet">
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       
 </head>
 

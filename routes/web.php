@@ -32,3 +32,10 @@ Route::get('/addclass', 'AddClassController@index')->name('addclasspage');
 Route::post('/addclass', 'AddClassController@addclass')->name('addclass');
 Route::get('/addsection', 'AddSectionController@index')->name('addsectionpage');
 Route::post('/addsection', 'AddSectionController@addsection')->name('addsection');
+
+
+Route::get('/addstudent','DependentDropdownController@prodfunct');
+Route::get('/get-section-by-class/{id}','DependentDropdownController@getSectionsByClassId');
+
+
+

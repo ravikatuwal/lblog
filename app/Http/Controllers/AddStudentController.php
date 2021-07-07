@@ -14,13 +14,14 @@ class AddStudentController extends Controller
     //not needed/ not called
 
     public function addnew() {
-
-
-        $classes = Classes::paginate(5,['*'],'classes');
-        $sections = Sections::paginate(5,['*'],'sections');
+     
+        $classes = Classes::all();
+        $sections = Sections::all();
         return view('addstudent',compact('classes','sections'));
 
     }
+
+
 
     public function storenew(Request $request) {
         $this->validate ($request,[
@@ -35,8 +36,8 @@ class AddStudentController extends Controller
         $student = new AddStudent;
         $student->first_name=$request->firstname;
         $student->last_name=$request->lastname;
-        $student->class=$request->class;
-        $student->section=$request->section;
+        $student->student_class=$request->class;
+        $student->student_section=$request->section;
         $student->email=$request->email;
         $student->phone=$request->phone;
         $student->save();

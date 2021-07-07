@@ -1,11 +1,11 @@
-// auto fill the content of one input to another
-/*function Copydata() {
-    $("#sectionid").val($("#classid").val());
-}
-//  and add this to the first id ie. classid input
- onkeyup=Copydata();
+// // auto fill the content of one input to another
+// function Copydata() {
+//     $("#sectionid").val($("#classid").val());
+// }
+// //  and add this to the first id ie. classid input
+// //  onkeyup=Copydata();
 
- */
+//  */
 
 // To add new input or textarea
 /*unction addTextArea() {
@@ -21,3 +21,41 @@
 <input type="submit" name="submitted">
 </form>
 */
+$(document).ready(function() {
+    $(document).on("change", "#class", function() {
+        // console.log("has its change");
+
+        var class_id = $(this).val();
+
+        var div = $(this).parent();
+
+        var op = " ";
+        // console.log(class_id);
+        $.ajax({
+            type: "get",
+            url: "/get-section-by-class/" + class_id,
+
+            success: function(data) {
+                // console.log("success");
+
+                // console.log(data);
+
+                // console.log(data.length);
+
+                op += "";
+                for (var i = 0; i < data.length; i++) {
+                    op +=
+                        '<option value="' +
+                        data[i].section_id +
+                        '">' +
+                        data[i].section_name +
+                        "</option>";
+                }
+                console.log(div.find(".section"));
+                $("#section").html(" ");
+                $("#section").append(op);
+            },
+            error: function() {}
+        });
+    });
+});

@@ -13,6 +13,7 @@ class CreateStudentsTable extends Migration
      */
     public function up()
     {
+        if(!Schema::hasTable('students')){
         Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('first_name');
@@ -21,6 +22,7 @@ class CreateStudentsTable extends Migration
             $table->string('phone');
             $table->timestamps();
         });
+    }
     }
 
     /**

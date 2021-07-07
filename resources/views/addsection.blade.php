@@ -41,7 +41,7 @@
     <div class="form-row mb-4">
         
     <div class="col">
-        <select class="browser-default custom-select" name="sectionid">
+        <select class="browser-default custom-select" name="sectionclass">
             <option value="" selected>Choose Class</option>
             @foreach ($classes as $class)
             <option value="{{ $class->class_id }}">{{ $class->class_name }}</option>
@@ -51,13 +51,19 @@
         </div>
 
         <div class="col">
-            <!-- Class name -->
+            <!-- Section Name -->
+            <input type="text" id="defaultRegisterFormLastName" class="form-control" name="sectionid" placeholder="Section Id">
+        </div>
+
+
+        <div class="col">
+            <!-- Section Name -->
             <input type="text" id="defaultRegisterFormLastName" class="form-control" name="sectionname" placeholder="Section Name">
         </div>
     </div>
     
     <!--Submit button -->
-    <button class="btn btn-info my-4 btn-block" type="submit">Add Class</button>
+    <button class="btn btn-info my-4 btn-block" type="submit">Add Section</button>
   
 </form>
 

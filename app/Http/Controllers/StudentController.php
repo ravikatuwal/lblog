@@ -11,7 +11,6 @@ use App\Sections;
 class StudentController extends Controller
 {
     public function index() {
-
         $students = Student::paginate(5,['*'],'students');
         $add_students = AddStudent::paginate(6,['*'],'add_students');
 

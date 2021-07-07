@@ -51,24 +51,20 @@
 
     <div class="form-row mb-4">
         <div class="col">
-        <select class="browser-default custom-select" name="class">
-            <option value="" selected>Choose Class</option>
+        <select id="class" class="browser-default custom-select" name="class">
+            <option value="0" disabled="true" selected >Choose Class</option>
 
-            
             @foreach ($classes as $class)
             <option value="{{ $class->class_id }}">{{ $class->class_name }}</option>
             @endforeach
         </select>
         </div>
+
         <div class="col">
             <!-- Section -->
-            <select class="browser-default custom-select" name="section">
-                <option value="" selected>Choose Section</option>
-                
-                @foreach ( $sections as $section  )
-            <option value="{{ $section->section_id }}">{{ $section->section_name }}</option>
-            @endforeach
-          
+            <select id="section" class="section browser-default custom-select" name="section">
+            <option value="0" disabled="true" selected>Choose Section</option>
+
             </select>
         </div>
     </div>

@@ -25,7 +25,7 @@ class AddClassController extends Controller
         $class->class_id=$request->classid;
         $class->class_name=$request->classname;
         $class->save();
-        return redirect('/addsection')->with('successMsg','Class Successfully Recorded');
+        return redirect('/addclass')->with('successMsg','Class Successfully Recorded');
     }
 
     
