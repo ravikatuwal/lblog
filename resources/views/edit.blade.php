@@ -39,6 +39,17 @@
         </div>
     </div>
 
+    <div class="form-row mb-4">
+        <div class="col">
+            <!-- First name -->
+            <input type="text" id="defaultRegisterFormFirstName" class="form-control" value="{{ $student->student_class }}"name="class" placeholder="First name">
+        </div>
+        <div class="col">
+            <!-- Last name -->
+            <input type="text" id="section" class="form-control" value="{{ $student->student_section }}" name="section" placeholder="Last name">
+        </div>
+    </div>
+
     <!-- E-mail -->
     <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" value="{{ $student->email }}" name="email" placeholder="E-mail">
 

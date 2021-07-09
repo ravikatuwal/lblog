@@ -20,6 +20,7 @@ class ClassAndSection extends Migration
                 $table->string('name_section')->references('section_name')->on('sections');
                 $table->timestamps();
             });
+        }
     }
 
     /**
@@ -29,6 +30,6 @@ class ClassAndSection extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('classesandsection');
     }
 }

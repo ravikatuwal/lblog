@@ -23,8 +23,6 @@
 */
 $(document).ready(function() {
     $(document).on("change", "#class", function() {
-        // console.log("has its change");
-
         var class_id = $(this).val();
 
         var div = $(this).parent();
@@ -36,13 +34,8 @@ $(document).ready(function() {
             url: "/get-section-by-class/" + class_id,
 
             success: function(data) {
-                // console.log("success");
-
-                // console.log(data);
-
-                // console.log(data.length);
-
-                op += "";
+                op =
+                    "<option value='0' selected='true'>Choose Section</option>";
                 for (var i = 0; i < data.length; i++) {
                     op +=
                         '<option value="' +
