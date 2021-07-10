@@ -41,24 +41,33 @@
 
     <div class="form-row mb-4">
         <div class="col">
-            <!-- First name -->
-            <input type="text" id="defaultRegisterFormFirstName" class="form-control" value="{{ $student->student_class }}"name="class" placeholder="First name">
+            <select id="class" class="browser-default custom-select" name="class">
+                <option value="{{ $student->class_id }}" selected >{{ $student->classes->class_name }}</option>
+
+                @foreach ($classes as $class)
+                <option value="{{ $class->id }}">{{ $class->class_name }}</option>
+                @endforeach
+            </select>
         </div>
+
+
         <div class="col">
-            <!-- Last name -->
-            <input type="text" id="section" class="form-control" value="{{ $student->student_section }}" name="section" placeholder="Last name">
+            <!--Section name -->
+            <input type="text" id="section" class="form-control" value="{{ $student->section_id }}" name="section" placeholder="Student Section">
         </div>
     </div>
-
-    <!-- E-mail -->
-    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" value="{{ $student->email }}" name="email" placeholder="E-mail">
-
-    <!-- Password -->
-    
+    <div class="form-row mb-4">
+        <div class="col">
+            <!-- E-mail -->
+            <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" value="{{ $student->email }}" name="email" placeholder="E-mail">
+        </div>   
 
     <!-- Phone number -->
-    <input type="text" id="defaultRegisterPhonePassword" class="form-control" value="{{ $student->phone}}" name="phone" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
-    
+
+        <div class="col">
+            <input type="text" id="defaultRegisterPhonePassword" class="form-control" value="{{ $student->phone}}" name="phone" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+        </div>
+    </div>
 
     
     <!-- Sign up button -->

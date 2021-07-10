@@ -16,13 +16,13 @@ class AddClassController extends Controller
     public function addclass(Request $request){
 
         $this->validate ($request,[
-            'classid'=>'required',
+            'id'=>'required',
             'classname'=>'required',
             
         ]);
 
         $class = new Classes;
-        $class->class_id=$request->classid;
+        $class->id=$request->id;
         $class->class_name=$request->classname;
         $class->save();
         return redirect('/addclass')->with('successMsg','Class Successfully Recorded');

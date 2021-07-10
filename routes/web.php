@@ -36,5 +36,7 @@ Route::post('/addsection', 'AddSectionController@addsection')->name('addsection'
 Route::get('/addstudent','DependentDropdownController@prodfunct');
 Route::get('/get-section-by-class/{id}','DependentDropdownController@getSectionsByClassId');
 
+Route::get('/get-section-for-update/{id}','DependentDropdownController@getSectionsForUpdate');
+
 
 

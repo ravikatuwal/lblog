@@ -41,7 +41,7 @@
     <div class="form-row mb-4">
     <div class="col">
             <!-- Class Id  -->
-            <input type="text" id="classid" class="form-control" name="classid" placeholder="Class Id">
+            <input type="text" id="classid" class="form-control" name="id" placeholder="Class Id">
         </div>
         <div class="col">
             <!-- Class name -->

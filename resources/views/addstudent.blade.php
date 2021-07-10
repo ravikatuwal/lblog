@@ -38,6 +38,13 @@
 
     <p class="h4 mb-4">Add Student</p>
 
+
+    <div class="form-row mb-4">
+        <div class="col">
+            <!-- First name -->
+            <input type="text" id="defaultRegisterForm" class="form-control" name="studentid" placeholder="Student Id">
+        </div>
+    </div>
     <div class="form-row mb-4">
         <div class="col">
             <!-- First name -->
@@ -55,7 +62,7 @@
             <option value="0" disabled="true" selected >Choose Class</option>
 
             @foreach ($classes as $class)
-            <option value="{{ $class->class_id }}">{{ $class->class_name }}</option>
+            <option value="{{ $class->id }}">{{ $class->class_name }}</option>
             @endforeach
         </select>
         </div>

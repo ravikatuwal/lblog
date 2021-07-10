@@ -15,8 +15,7 @@ class Classes extends Migration
     {
         if(!Schema::hasTable('classes')){
             Schema::create('classes', function (Blueprint $table) {
-                $table->bigIncrements('id');
-                $table->string('class_id')->unique();
+                $table->integer('id')->primary();
                 $table->string('class_name');
                 $table->timestamps();
             });
@@ -30,6 +29,6 @@ class Classes extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('classes');
     }
 }

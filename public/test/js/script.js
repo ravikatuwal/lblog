@@ -34,12 +34,11 @@ $(document).ready(function() {
             url: "/get-section-by-class/" + class_id,
 
             success: function(data) {
-                op =
-                    "<option value='0' selected='true'>Choose Section</option>";
+                op = "<option value='0' selected>Choose Section</option>";
                 for (var i = 0; i < data.length; i++) {
                     op +=
                         '<option value="' +
-                        data[i].section_id +
+                        data[i].id +
                         '">' +
                         data[i].section_name +
                         "</option>";

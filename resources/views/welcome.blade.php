@@ -26,6 +26,15 @@
 
           <table class="table">
             <thead class="black white-text">
+            <tr> 
+          <th colspan="8">     
+      <div class="panel panel-default">
+          <div class="panel-body">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Student Record" />  
+          </div>
+        </div>
+</th>
+      </tr>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">First Name</th>
@@ -35,17 +44,21 @@
                 <th scope="col">Email</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Action</th>
+                
               </tr>
             </thead>
 
               <tbody>
+        
+
+
               @foreach ($students as $student)
                 <tr>
                   <th scope="row">{{ $student->id }}</th>
                   <td>{{ $student->first_name }}</td>
                   <td>{{ $student->last_name }}</td>
-                  <td>{{ $student->student_class }}</td>
-                  <td>{{ $student->student_section }}</td>
+                  <td>{{ $student->classes->class_name }}</td>
+                  <td>{{ $student->sections->section_name }}</td>
                   <td>{{ $student->email }}</td>
                   <td>{{ $student->phone }}</td>
                   <td><a class="btn btn-raised btn-primary btn-sm" href="{{ route('edit', $student->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> || 

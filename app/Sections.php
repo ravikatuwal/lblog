@@ -3,18 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Classes;
+use App\Student;
 
 class Sections extends Model
 {
 
     protected $table='sections';
     
-    public function student(){
-        return $this->hasMany(App\AddStudent::class);
+    public function students(){
+        return $this->hasMany(Student::class,'section_id','id');
         }
 
-    public function class(){
-        return $this->belongsTo(App\Classes::class);
+    public function classes(){
+        return $this->belongsTo(Classes::class,'class_id', 'id');
         }
 }
 

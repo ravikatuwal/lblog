@@ -15,10 +15,9 @@ class Sections extends Migration
     {
         if(!Schema::hasTable('sections')){
             Schema::create('sections', function (Blueprint $table) {
-                $table->bigIncrements('id');
-                $table->string('section_class');
-                $table->foreign('section_class')->references('class_id')->on('classes');
-                $table->string('section_id');
+                $table->integer('id')->primary();
+                $table->integer('class_id');
+                $table->foreign('class_id')->references('id')->on('classes');
                 $table->string('section_name');
                 $table->timestamps();
     
@@ -33,6 +32,6 @@ class Sections extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('sections');
     }
 }

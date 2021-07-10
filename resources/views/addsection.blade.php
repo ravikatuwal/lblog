@@ -41,10 +41,10 @@
     <div class="form-row mb-4">
         
     <div class="col">
-        <select class="browser-default custom-select" name="sectionclass">
+        <select class="browser-default custom-select" name="classid">
             <option value="" selected>Choose Class</option>
             @foreach ($classes as $class)
-            <option value="{{ $class->class_id }}">{{ $class->class_name }}</option>
+            <option value="{{ $class->id }}">{{ $class->class_name }}</option>
             @endforeach
            
         </select>

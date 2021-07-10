@@ -12,7 +12,6 @@ class StudentController extends Controller
 {
     public function index() {
         $students = Student::paginate(5,['*'],'students');
-
         $classes = Classes::all();
         return view('welcome',compact('students','classes'));
 
@@ -29,6 +28,7 @@ class StudentController extends Controller
 
     public function storenew(Request $request) {
         $this->validate ($request,[
+            'studentid'=>'required',
             'firstname'=>'required',
             'lastname'=>'required',
             'class'=>'required',
@@ -38,12 +38,13 @@ class StudentController extends Controller
         ]);
 
         $student = new Student;
+        $student->id=$request->studentid;
         $student->first_name=$request->firstname;
         $student->last_name=$request->lastname;
-        $student->student_class=$request->class;
-        $student->student_section=$request->section;
         $student->email=$request->email;
         $student->phone=$request->phone;
+        $student->class_id=$request->class;
+        $student->section_id=$request->section;
         $student->save();
         $add_students = DB::table('students')->get();
         return redirect('/')->with('successMsg','Student Record Successfully Recorded');
@@ -55,7 +56,9 @@ class StudentController extends Controller
 
     public function edit($id){
         $student = Student::find($id);
-        return view('edit',compact('student'));
+        $classes=Classes::all();
+        $sections=Sections::all();
+        return view('edit',compact('student','classes','sections'));
 
     }
 
@@ -72,8 +75,8 @@ class StudentController extends Controller
         $student = Student::find($id);
         $student->first_name=$request->firstname;
         $student->last_name=$request->lastname;
-        $student->student_class=$request->class;
-        $student->student_section=$request->section;
+        $student->class_id=$request->class;
+        $student->section_id=$request->section;
         $student->email=$request->email;
         $student->phone=$request->phone;
         $student->save();

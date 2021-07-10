@@ -19,14 +19,15 @@ class AddSectionController extends Controller
 
         
         $this->validate ($request,[
-            'sectionclass'=>'required',
+            'classid'=>'required',
             'sectionid'=>'required',
             'sectionname'=>'required'
         ]);
 
         $section = new Sections;
-        $section ->section_class=$request->sectionclass;
-        $section ->section_id=$request->sectionid;
+        $section ->id=$request->sectionid;
+        $section ->class_id=$request->classid;
+        
         $section ->section_name=$request->sectionname;
         $section ->save();
         return redirect('/addsection')->with('successMsg','Section Successfully Recorded');
