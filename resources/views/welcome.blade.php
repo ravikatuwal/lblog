@@ -30,7 +30,7 @@
           <th colspan="6">     
             <div class="panel panel-default">
                 <div class="panel-body">
-                  <input type="text" name="search" id="search" class="form-control" placeholder="Search Student Record" />  
+                <input type="text" name="search" id="search" class="form-control" placeholder="Search Student Record" >  
                 </div>
               </div>
           </th>
@@ -55,7 +55,7 @@
               </tr>
             </thead>
 
-              <tbody>
+              <tbody id="dynamic-row">
                @foreach ($students as $student)
                 <tr>
                   <th scope="row">{{ $student->id }}</th>

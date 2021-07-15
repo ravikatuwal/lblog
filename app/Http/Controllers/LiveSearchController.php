@@ -11,19 +11,32 @@ use DB;
 class LiveSearchController extends Controller
 {
     public function index(){
-        $students=Student::all();
+        $students = Student::paginate(5,['*'],'students');
         $sections=Sections::all();
         $classes=Classes::all();
-        return view('live_search', compact('students', 'sections', 'classes'));
+        return view('welcome', compact('students', 'sections', 'classes'));
     }
 
     public function action(Request $request){
-        $students=Student::where('first_name', 'like', '%' . $request->get('query') . '%')->get();
+        $students=Student::where('first_name', 'like', '%' . $request->get('query') . '%')
+                        ->orWhere('last_name', 'like', '%' . $request->get('query') . '%')
+                        ->orWhere('email', 'like', '%' . $request->get('query') . '%')
+                        ->orWhere('phone', 'like', '%' . $request->get('query') . '%')
+                        ->orWhere('class_id', 'like', '%' . $request->get('query') . '%')
+                        ->orWhere('section_id', 'like', '%' . $request->get('query') . '%')
+                        ->get();
 
     return json_encode( $students);
 
 
     }
+
+
+}
+
+
+
+
 
 
 
@@ -81,4 +94,4 @@ class LiveSearchController extends Controller
     //     }
 
     // }
-}
+
