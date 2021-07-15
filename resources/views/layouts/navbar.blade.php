@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top"  style="margin-bottom: 50px;">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Easy Learning</a>
+  <a class="navbar-brand" href="#">Noob Tech SMS</a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"

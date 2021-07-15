@@ -18,6 +18,8 @@ Route::get('/edit/{id}', 'StudentController@edit')->name('edit');
 Route::post('/update/{id}', 'StudentController@update')->name('update');
 Route::delete('/delete/{id}', 'StudentController@delete')->name('delete');
 
+Route::get('/live_search','LiveSearchController@index');
+Route::post('/live_search/action','LiveSearchController@action')->name('live_search.action');
 
 // Authentication
 Auth::routes();
@@ -37,6 +39,7 @@ Route::get('/addstudent','DependentDropdownController@prodfunct');
 Route::get('/get-section-by-class/{id}','DependentDropdownController@getSectionsByClassId');
 
 Route::get('/get-section-for-update/{id}','DependentDropdownController@getSectionsForUpdate');
+
 
 
 

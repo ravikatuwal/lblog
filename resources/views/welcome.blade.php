@@ -27,13 +27,20 @@
           <table class="table">
             <thead class="black white-text">
             <tr> 
-          <th colspan="8">     
-      <div class="panel panel-default">
-          <div class="panel-body">
-            <input type="text" name="search" id="search" class="form-control" placeholder="Search Student Record" />  
-          </div>
-        </div>
-</th>
+          <th colspan="6">     
+            <div class="panel panel-default">
+                <div class="panel-body">
+                  <input type="text" name="search" id="search" class="form-control" placeholder="Search Student Record" />  
+                </div>
+              </div>
+          </th>
+          <th colspan="2">     
+            <div class="panel panel-default">
+                <div class="panel-body">
+                  <h3 align="center">Total Record : <span id="total_records"></span></h3>  
+                </div>
+              </div>
+          </th>
       </tr>
               <tr>
                 <th scope="col">#</th>
@@ -49,10 +56,7 @@
             </thead>
 
               <tbody>
-        
-
-
-              @foreach ($students as $student)
+               @foreach ($students as $student)
                 <tr>
                   <th scope="row">{{ $student->id }}</th>
                   <td>{{ $student->first_name }}</td>
