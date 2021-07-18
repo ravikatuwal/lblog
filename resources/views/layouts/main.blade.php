@@ -72,8 +72,11 @@
           
           op = "";
                 for (var i = 0; i < data.length; i++) {
+                    var editButton ='<td><a class="btn btn-raised btn-primary btn-sm" href="/edit/' + data[i].id+'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';
+                    var deleteButton ='<a class="btn btn-raised btn-danger btn-sm" href="/delete/' + data[i].id+'"><i class="fa fa-trash-o" aria-hidden="true"></i></a>';
+
                     op +=
-                    '<tr><th scope="row">' + data[i].id + '</th><td>' + data[i].first_name + '</td><td>' + data[i].last_name + '</td><td>' + data[i].class_id + '</td><td>' +data[i].section_id + '</td><td>' + data[i].email + '</td><td>' + data[i].phone +'</td></tr>';
+                    '<tr><th scope="row">' + data[i].id + '</th><td>' + data[i].first_name + '</td><td>' + data[i].last_name + '</td><td>' + data[i].class_id + '</td><td>' +data[i].section_id + '</td><td>' + data[i].email + '</td><td>' + data[i].phone +'</td>' + editButton + '||' + deleteButton +'</tr>';
                 }
 
                 $('#dynamic-row').html('');
@@ -86,7 +89,6 @@
 
 
     });
-    
   </script>
   
 </body>

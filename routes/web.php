@@ -16,7 +16,8 @@ Route::get('/addstudent', 'StudentController@addnew')->name('add.new');
 Route::post('/addstudent', 'StudentController@storenew')->name('store.new');
 Route::get('/edit/{id}', 'StudentController@edit')->name('edit');
 Route::post('/update/{id}', 'StudentController@update')->name('update');
-Route::delete('/delete/{id}', 'StudentController@delete')->name('delete');
+// Route::delete('/delete/{id}', 'StudentController@delete')->name('delete');
+Route::get('/delete/{id}', 'StudentController@delete')->name('delete');
 
 Route::get('/live_search','LiveSearchController@index');
 Route::post('/live_search/action','LiveSearchController@action')->name('live_search.action');
